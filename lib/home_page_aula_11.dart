@@ -4,19 +4,17 @@ import 'package:flutter/material.dart';
 //alterar algo na tela ele reconstroi o buil com os novos valores.
 //Precisa de uma classe de apoio para retornar  e funcionar o estado
 
-class HomePage extends StatefulWidget {
+class HomePageAula10 extends StatefulWidget {
   @override
-  State<HomePage> createState() {
+  State<HomePageAula10> createState() {
     //pode trocar o valor gerado <valorGerado> pelo nome da classe por exemplo
     return HomePageState();
   }
 }
 
-class HomePageState extends State<HomePage> {
+class HomePageState extends State<HomePageAula10> {
   //GestureDetector: Metodoq que detecta quando ha um click em cima do texto
   //onTap: posso coocar um metodo dentro, que quado eu clicar ele vai aparecer o que estiver dentro
-
-  int contador = 0;
 
 /*Classe Center, Aligment são tipos de sigleRender que impacta ao criar elementos
 na tela. Este elemento pode não mudar, pois esta utilizando o mesmo render,
@@ -43,9 +41,7 @@ independente. Ver aula #11
       floatingActionButton: FloatingActionButton(
           child: Icon(Icons.add),
           onPressed: () {
-            setState(() {
-              contador++;
-            });
+            //ação para botão
           }),
     );
   }

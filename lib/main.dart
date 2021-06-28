@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'AppWidget.dart';
+import 'package:ola_mundo/AppWidget_aula19_routeAuto.dart';
 
 main() {
-  runApp(AppWidget());
+  runApp(AppWidgetAula19());
 }

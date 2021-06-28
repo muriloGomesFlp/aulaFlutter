@@ -4,15 +4,15 @@ import 'package:flutter/material.dart';
 //alterar algo na tela ele reconstroi o buil com os novos valores.
 //Precisa de uma classe de apoio para retornar  e funcionar o estado
 
-class HomePage extends StatefulWidget {
+class HomePageAula9 extends StatefulWidget {
   @override
-  State<HomePage> createState() {
+  State<HomePageAula9> createState() {
     //pode trocar o valor gerado <valorGerado> pelo nome da classe por exemplo
     return HomePageState();
   }
 }
 
-class HomePageState extends State<HomePage> {
+class HomePageState extends State<HomePageAula9> {
   //GestureDetector: Metodoq que detecta quando ha um click em cima do texto
   //onTap: posso coocar um metodo dentro, que quado eu clicar ele vai aparecer o que estiver dentro
 
@@ -27,17 +27,16 @@ independente. Ver aula #11
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text('Teste')),
-      body: Container(
-        height: 200,
-        width: 200,
-        color: Colors.green[900],
-        child: Center(
-          child: Container(
-            alignment: Alignment.center,
-            height: 100,
-            width: 100,
-            color: Colors.yellow[200],
-          ),
+      body: Center(
+        child: GestureDetector(
+          child: Text(
+              'Murilo, esta contando: $contador'), //ao add $contador, esta mostrando a vriável. Ver que deve esta entre ''
+          onTap: () {
+            setState(() {
+              //Usado para modificar o estado. Assim ele chama o build e reconstrou o Widget
+              contador++;
+            });
+          },
         ),
       ),
       floatingActionButton: FloatingActionButton(
