@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
-class LoginPage extends StatefulWidget {
+class LoginPageAula24 extends StatefulWidget {
+/** Aula 24- Usando o card para deixar campos do login visiveis. */
+
   @override
   _LoginPageState createState() => _LoginPageState();
 }
@@ -8,29 +10,65 @@ class LoginPage extends StatefulWidget {
 String email = '';
 String senha = '';
 
-class _LoginPageState extends State<LoginPage> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: SingleChildScrollView(
-        //SingleChildScrollView: coloca todos os filhos para usar o scroll
-        child: SizedBox(
-          width: MediaQuery.of(context).size.width,
-          height: MediaQuery.of(context).size.height,
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                LogoImagemLocal(),
-                InputEmail(email),
-                InputSenha(senha),
-                BtnLogin(email, senha),
-              ],
-            ),
+Widget _body(BuildContext context) {
+  return Column(children: [
+    SingleChildScrollView(
+      //SingleChildScrollView: coloca todos os filhos para usar o scroll
+      child: SizedBox(
+        width: MediaQuery.of(context).size.width,
+        height: MediaQuery.of(context).size.height,
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              LogoImagemLocal(),
+              Card(
+                  child: Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(top: 12.0, bottom: 8.0),
+                    child: Text(
+                      'Entrar no Gerenciador \n de Colheita Fácil \n GCF',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontSize: 22,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 1.0),
+                    child: InputEmail(email),
+                  ),
+                  InputSenha(senha),
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 8.0),
+                    child: BtnLogin(email, senha),
+                  ),
+                ],
+              )),
+            ],
           ),
         ),
       ),
+    ),
+  ]);
+}
+
+class _LoginPageState extends State<LoginPageAula24> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Stack(children: [
+        SizedBox(
+            width: MediaQuery.of(context).size.width,
+            height: MediaQuery.of(context).size.height,
+            child:
+                Image.asset('assets/img/background2.jpg', fit: BoxFit.cover)),
+        Container(color: Colors.black.withOpacity(0.1)),
+        _body(context)
+      ]),
     );
   }
 }
@@ -74,7 +112,7 @@ class InputEmail extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.all(12.0),
       child: TextField(
         scrollPadding: EdgeInsets.only(bottom: 100),
         onChanged: (emailInput) {
@@ -94,7 +132,7 @@ class InputSenha extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.all(12.0),
       child: TextField(
         scrollPadding:
             EdgeInsets.only(bottom: 100), //ao aparecer o teclado sobe o widget

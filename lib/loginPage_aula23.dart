@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class LoginPage extends StatefulWidget {
+class LoginPageAula23 extends StatefulWidget {
   @override
   _LoginPageState createState() => _LoginPageState();
 }
@@ -8,29 +8,50 @@ class LoginPage extends StatefulWidget {
 String email = '';
 String senha = '';
 
-class _LoginPageState extends State<LoginPage> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: SingleChildScrollView(
-        //SingleChildScrollView: coloca todos os filhos para usar o scroll
-        child: SizedBox(
-          width: MediaQuery.of(context).size.width,
-          height: MediaQuery.of(context).size.height,
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                LogoImagemLocal(),
-                InputEmail(email),
-                InputSenha(senha),
-                BtnLogin(email, senha),
-              ],
-            ),
+Widget _body(BuildContext context) {
+  return Column(children: [
+    SingleChildScrollView(
+      //SingleChildScrollView: coloca todos os filhos para usar o scroll
+      child: SizedBox(
+        width: MediaQuery.of(context).size.width,
+        height: MediaQuery.of(context).size.height,
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              LogoImagemLocal(),
+              InputEmail(email),
+              InputSenha(senha),
+              BtnLogin(email, senha),
+            ],
           ),
         ),
       ),
+    ),
+  ]);
+}
+
+class _LoginPageState extends State<LoginPageAula23> {
+  /** Aula 23 - Uso do widget stack, coloca os widget em pilhas, podendo-se
+   * criar um container e atribuir um cor a ele, dando o efeito de color-background;
+   * Usado o media query para usar todo o tamanho de tela e utilizado do atributo
+   * fit: BoxFit.cover para esticar+zoom na imagem para colocar na tela toda;
+   * foi também add um container para deixar a imagem pouco mais escura usando do 
+   * withOpacity
+    */
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Stack(children: [
+        SizedBox(
+            width: MediaQuery.of(context).size.width,
+            height: MediaQuery.of(context).size.height,
+            child:
+                Image.asset('assets/img/background2.jpg', fit: BoxFit.cover)),
+        Container(color: Colors.black.withOpacity(0.1)),
+        _body(context)
+      ]),
     );
   }
 }
