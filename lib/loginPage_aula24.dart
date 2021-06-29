@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class LoginPageAula24 extends StatefulWidget {
-/** Aula 24- Usando o card para deixar campos do login visiveis. */
+/* Aula 24- Usando o card para deixar campos do login visiveis. */
 
   @override
   _LoginPageState createState() => _LoginPageState();
