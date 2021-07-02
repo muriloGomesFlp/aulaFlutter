@@ -67,7 +67,7 @@ class _LoginPageState extends State<LoginPageAula24> {
             child:
                 Image.asset('assets/img/background2.jpg', fit: BoxFit.cover)),
         Container(color: Colors.black.withOpacity(0.1)),
-        _body(context)
+        SingleChildScrollView(child: _body(context))
       ]),
     );
   }

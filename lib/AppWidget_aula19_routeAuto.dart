@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ola_mundo/appWidget_controller.dart';
-import 'package:ola_mundo/home_page_aula_16.dart';
+import 'package:ola_mundo/home_page_aula_25e26.dart';
 import 'loginPage_aula24.dart';
 
 //StatelessWidget: é um estado para Widget imutavel, ou seja, não muda o status, não te animação e denrte outros...
@@ -24,7 +24,7 @@ class AppWidgetAula19 extends StatelessWidget {
             initialRoute: '/',
             routes: {
               '/': (context) => LoginPageAula24(),
-              '/home': (context) => HomePageAula16()
+              '/home': (context) => HomePageAula25e26()
             });
       },
     );
