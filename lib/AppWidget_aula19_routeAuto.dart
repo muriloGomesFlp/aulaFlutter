@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:ola_mundo/appWidget_controller.dart';
-import 'package:ola_mundo/home_page_aula_25e26.dart';
-import 'loginPage_aula24.dart';
+import 'package:ola_mundo/desafio.dart';
+//mport 'package:ola_mundo/home_page_aula_25e26.dart';
+//import 'loginPage_aula24.dart';
 
 //StatelessWidget: é um estado para Widget imutavel, ou seja, não muda o status, não te animação e denrte outros...
 class AppWidgetAula19 extends StatelessWidget {
@@ -23,8 +24,9 @@ class AppWidgetAula19 extends StatelessWidget {
                     : Brightness.light),
             initialRoute: '/',
             routes: {
-              '/': (context) => LoginPageAula24(),
-              '/home': (context) => HomePageAula25e26()
+              '/': (context) => LoginDesafio(),
+              //'/': (context) => LoginPageAula24(),
+              //'/home': (context) => HomePageAula25e26()
             });
       },
     );
